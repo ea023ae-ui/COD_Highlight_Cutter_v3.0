@@ -23,12 +23,42 @@ if errorlevel 1 (
 )
 
 REM --- CHECK TESSERACT ---
+set "TESSERACT_FOUND=0"
+
+REM Check PATH first
 where tesseract >nul 2>&1
-if errorlevel 1 (
-    echo [WARNING] Tesseract OCR not found!
+if errorlevel 0 if not errorlevel 1 set "TESSERACT_FOUND=1"
+
+REM Auto-detect common install locations
+if %TESSERACT_FOUND%==0 (
+    if exist "C:\Program Files\Tesseract-OCR\tesseract.exe" (
+        set "PATH=%PATH%;C:\Program Files\Tesseract-OCR"
+        set "TESSERACT_FOUND=1"
+        echo [Tesseract] Auto-detected: C:\Program Files\Tesseract-OCR
+    )
+)
+
+if %TESSERACT_FOUND%==0 (
+    if exist "C:\Program Files (x86)\Tesseract-OCR\tesseract.exe" (
+        set "PATH=%PATH%;C:\Program Files (x86)\Tesseract-OCR"
+        set "TESSERACT_FOUND=1"
+        echo [Tesseract] Auto-detected: C:\Program Files (x86)\Tesseract-OCR
+    )
+)
+
+if %TESSERACT_FOUND%==0 (
+    if exist "D:\Tesseract-OCR\tesseract.exe" (
+        set "PATH=%PATH%;D:\Tesseract-OCR"
+        set "TESSERACT_FOUND=1"
+        echo [Tesseract] Auto-detected: D:\Tesseract-OCR
+    )
+)
+
+if %TESSERACT_FOUND%==0 (
+    echo [WARNING] Tesseract OCR not found in PATH or common locations!
     echo Install from: https://github.com/UB-Mannheim/tesseract/wiki
     echo.
-    echo Press any key to continue anyway...
+    echo Press any key to continue anyway (OCR will be disabled)...
     pause >nul
 )
 
