@@ -1,0 +1,26 @@
+# COD Highlight Cutter v3.0 - Dependencies
+# Run: pip install -r requirements.txt
+
+# Video Processing
+moviepy==1.0.3
+opencv-python==4.9.0.80
+imageio==2.34.0
+imageio-ffmpeg==0.4.9
+
+# Audio Processing
+librosa==0.10.1
+soundfile==0.12.1
+pydub==0.25.1
+
+# OCR
+tesseract
+pytesseract==0.3.10
+Pillow==10.2.0
+
+# Data/Utils
+numpy==1.26.4
+scipy==1.12.0
+
+# Optional: GPU acceleration
+# torch==2.2.0
+# torchvision==0.17.0
