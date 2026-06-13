@@ -1,0 +1,5 @@
+PUT YOUR COD GAMEPLAY VIDEOS HERE
+
+Supported formats: .mp4, .avi, .mkv, .mov, .wmv
+
+Then run Start.bat and pick Option 2 (Auto-scan INPUT folder)

@@ -1,0 +1,8 @@
+OPTIONAL: BACKGROUND MUSIC
+
+Place your music files here:
+- background.mp3  → Auto-detected as background music
+- intro.mp3       → Used for intro animation
+- outro.mp3       → Used for outro animation
+
+Supported: .mp3, .wav

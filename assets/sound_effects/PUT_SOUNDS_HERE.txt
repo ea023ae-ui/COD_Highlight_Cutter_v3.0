@@ -1,0 +1,6 @@
+OPTIONAL: SOUND EFFECTS
+
+Place kill confirmation sounds here:
+- kill_confirm.wav  → Plays on kill detection
+
+Supported: .wav, .mp3
